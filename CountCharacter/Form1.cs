@@ -30,15 +30,16 @@ namespace CountCharacter
             string message = null;
             timer1.Enabled = false;
             text = textBox1.Text;
-            string t = text.Replace("\r", "");
-            R_count = text.Length - t.Length;
+            //string t = text.Replace("\r", "");
+            //R_count = text.Length - t.Length;
             //textBox1.Text = t;
             //text = t;
+            text = text.Replace("\r", "");
             count = text.Length;
             if (count >= count_length)
             {
                 if(flag != 1)
-                    textBox1.Text = textBox1.Text.Substring(0,count_length);
+                    text = text.Substring(0,count_length);
                 message = "超出输入限制!";
                 //MessageBox.Show("超出输入限制!", "PIG", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 //text = textBox1.Text;
@@ -53,6 +54,8 @@ namespace CountCharacter
             if (count < count_length)
                 flag = 0;
             temp = string.Format("{0}   {1}/{2}",message,count,count_length);
+            text = text.Replace("\n", "\r\n");
+            textBox1.Text = text;
             toolStripStatusLabel1.Text = temp;
         }
 
@@ -78,15 +81,22 @@ namespace CountCharacter
         {
             string temp = null;
             string message = null;
+            string text = null;
+            text = textBox1.Text;
+            text = text.Replace("\r", "");
+            count = text.Length;
             if (count >= count_length)
             {
-                textBox1.Text = textBox1.Text.Substring(0, count_length);
+                text = text.Substring(0, count_length);
                 message = "超出输入限制!";
+                count = count_length;
             }
             else
                 message = null;
             temp = string.Format("{0}   {1}/{2}", message, count, count_length);
             //MessageBox.Show();
+            text = text.Replace("\n", "\r\n");
+            textBox1.Text = text;
             toolStripStatusLabel1.Text = temp;
         }
     }

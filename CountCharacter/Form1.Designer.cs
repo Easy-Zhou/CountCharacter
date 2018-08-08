@@ -110,7 +110,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
-            this.Text = "莎娃迪卡";
+            this.Text = "莎娃迪卡 V2.0";
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
